@@ -1,79 +1,247 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Cassius : " />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+<html lang="en"><head>
+    <meta charset="utf-8">
     <title>Cassius</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    	<style>
+	.demo-logo .logo {
+		background: url(images/icons/Clipboard@2x.png) center 0 no-repeat;
+		background-size: 200px 200px;
+		height: 200px;
+		width: 200px;
+		float:right;
+		position:absolute;
+		right: 19.5%;
+		top: 54px;
+	}
+	
+	.demo-logo small{
+		color:#BDC3C7;
+
+	}
+	.demo-logo{
+		color:#fff;
+		padding-right: 320px;
+		padding-top: 15px;
+	}
+	
+	.demo-headline{
+		background-color: #34495E;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+	
+	.fui-checkbox-checked{
+		color:#1ABC9C;
+	}
+	
+	.footer-banner {
+		min-height: 193px;
+	}
+	.title{
+		padding: 14px 14px 1px 14px;
+	}
+	.shadPic{
+		-webkit-box-shadow: 0 0px 14px #AAA; 
+		-moz-box-shadow: 0 0px 14px #AAA;
+  		box-shadow: 0 0px 14px #AAA;
+	}
+	#pic1{
+		-moz-transition: all 0.25s linear;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear;
+	}
+	#pic2{
+		-moz-transition: all 0.25s linear;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear;
+	}
+	.footer-banner {
+		background-color: #34495e;
+	}
+	.tile p {
+		margin-bottom: 0px;
+	}
+	
+	.title{
+		padding: 6px 14px 25px 14px;
+	}
+	.tile-image {
+		margin: 23px 0 27px;
+	}
+	#twitter{
+		opacity:1;
+		-moz-transition: all 0.15s linear;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.15s linear;
+	}
+	#twitter:hover{
+		opacity:0.8;
+		-moz-transition: all 0.15s linear;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.15s linear;
+	}
+
+	</style>
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
   </head>
+  <body> 
+  
+  
+  <div class="demo-headline"> <h1 class="demo-logo"> <div class="logo"></div> Cassius <small>The Missing Notes &amp; Password Manager of Mac OS !</small> </h1> </div>&nbsp; &nbsp; &nbsp;<div class="container">
+       
 
-  <body>
+      
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/pldubouilh/cassius">View on GitHub</a>
+      <div class="row demo-tiles">
+        <div class="span3">
+          <div class="tile">
+            <img src="images/icons/Compas@2x.png" alt="Compas@2x" class="tile-image big-illustration">
+            <h3 class="tile-title">Rich Text Editor</h3>
+            <p>Clean and neat text editor, with loads of features&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+          </div>
+        </div>
 
-          <h1 id="project_title">Cassius</h1>
-          <h2 id="project_tagline"></h2>
+        <div class="span3">
+          <div class="tile">
+            <img src="images/icons/Toilet-Paper@2x.png" alt="Infinity-Loop@2x" class="tile-image">
+            <h3 class="tile-title">cr.yp.to</h3>
+            <p>Everything's encrypted, so don't worry about leaky database and stuff.</p><br>
+          </div>
+        </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/pldubouilh/cassius/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/pldubouilh/cassius/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <div class="span3">
+          <div class="tile">
+            <img src="images/icons/Pensils@2x.png" alt="Pensils@2x" class="tile-image">
+            <h3 class="tile-title">Cloud Sync</h3>
+            <p>Bropbox, iLoud, Owncloud or SSHfs, Cassius works with any flavour of cloud.</p><br>
+          </div>
+        </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <div class="span3">
+          <div class="tile">
+          <img src="images/demo/html-icon.png" class="tile-image">
+            <h3 class="tile-title">Open Source</h3>
+            <p>Everything's open-source. Feel free to come and review the code !</p><br>
+          </div>
+          
+        </div>
+      </div> <!-- /tiles -->
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+  <div class="row" style="margin-bottom: 45px; padding-top:20px; height: 280px;">
+        <div class="span3 offset1">
+          <h3 class="demo-panel-title">Featuring...</h3>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+          <label class="checkbox disabled checked" for="checkbox4" style="color:#34495E;">
+            <span class="icons"><span class="second-icon fui-checkbox-checked"></span></span>
+            A KISS Compliant note editor
+          </label>
+          
+		  <label class="checkbox disabled checked" for="checkbox4" style="color:#34495E;">
+            <span class="icons"><span class="second-icon fui-checkbox-checked"></span></span>
+            A nice password manager
+          </label>
+          
+          <label class="checkbox disabled checked" for="checkbox4" style="color:#34495E;">
+            <span class="icons"><span class="second-icon fui-checkbox-checked"></span></span>
+            Cloud Sync
+          </label>
+          
+          <label class="checkbox disabled checked" for="checkbox4" style="color:#34495E;">
+            <span class="icons"><span class="second-icon fui-checkbox-checked"></span></span>
+            Password Manager
+          </label>
+          
+          <label class="checkbox disabled checked" for="checkbox4" style="color:#34495E;">
+            <span class="icons"><span class="second-icon fui-checkbox-checked"></span></span>
+            Datalove <3
+          </label>
+        </div> <!-- /checkboxes span3 -->
+        
+        <div class="span8" style="height: 350px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="note.png" class="shadPic" id="pic1" style="opacity:1;"><img src="pw.png" class="shadPic" id="pic2" style="opacity: 1; position: relative; bottom: 270px; left: 25px; ;">
+        </div>
+   </div>
+      
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+      
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+    </div> <!-- /container -->
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="span7" style=" color: #34495e;">
+            <h3 class="footer-title">Cassius</h3>
+            <p>This software relies heavily on awesome open projects, like : MacGap, Bootstrap, FlatUI, Bootstrap WYSIWYG, crypto.js, SJCL, jStorage, Tipsy... <br> Many thanks to the authors !
+            </p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+            <p class="pvl">
+              Copyleft, Pierre-Louis DUBOUILH. News and updates on my twitter account.
+            </p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Cassius maintained by <a href="https://github.com/pldubouilh">pldubouilh</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+         
+          </div> <!-- /span8 -->
 
+          <div class="span5">
+            <div class="footer-banner">
+              <h3 class="footer-title">
+              <br>
+              	<a href="#fakelink" class="btn btn-large btn-block btn-primary" style=" margin-top: 0px; " 	>Download</a>
+              	<div style="padding-top: 30px; margin-left: 117px;">
+              		<!--<a href="https://twitter.com/pldwan" class="twitter-follow-button" margin-right:auto;" data-show-count="false" data-size="large" data-dnt="true">Follow @pldwan</a>-->
+              		<a href="https://twitter.com/pldwan"> <img id="twitter" alt="" class="" src="twitter.png"> </a>
+              	</div>
+              </h3>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/jquery.stacktable.js"></script>
+    <script src="js/application.js"></script>
+    <script>
+    function togglePic(){
+    	if($('#pic1').css('opacity')=='1'){
+	    	$('#pic1').css('opacity', '0');
+			$('#pic2').css('opacity', '1');
+    	}
+    	else{
+    		$('#pic2').css('opacity', '0');
+			$('#pic1').css('opacity', '1');
+		}
+    	setTimeout(togglePic, 5000)
+    }
+    
+    togglePic();
+    </script>
+	<!--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>-->
+<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 14px; font-family: Lato, sans-serif; font-weight: 400; letter-spacing: 0px; white-space: nowrap; " id="tagsinput_tag_autosize_tester"></tester>
 
-  </body>
-</html>
+</body></html>
