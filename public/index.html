@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Cassius</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+            
+         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+         <link href="css/flat-ui.css" rel="stylesheet">
+         <link href="css/font-awesome.css" rel="stylesheet">
+         <link href="css/cas.css" rel="stylesheet">
+         <link href="css/stylesheets/tipsy.css" rel="stylesheet">
+
+
+        <style>
+            
+            li [class^="icon-"], .nav li [class^="icon-"], li [class*=" icon-"], .nav li [class*=" icon-"] {
+                width: 0.9em;
+                font-size: 28px;
+            }
+            .login-form .login-field-icon {
+                margin-left: 12px;
+            }
+            
+            li::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            h4::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .under::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .todo::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .todoList::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .todo-content::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .todo-done::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .todo-icon::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .spanPw::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .rowPw::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            #moar::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            #crop::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            #up::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            #down::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            #less::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            #noteTitle::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            input::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            #toolbar::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .control-group::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .login-field::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            input::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .login-field-icon::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .btn::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .login-form::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .login-icon::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            small::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            img::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .login-screen::selection {
+                background-color: rgba(26, 188, 156, 0);
+            }
+            .todo li {
+                margin-top: 0px;
+            }
+            .todo li.todo-done {
+                background:#2C3E50;
+            }
+            
+            .todo-icon{
+                padding: 11px 25px 1px 4px;
+            }
+            #deletePw:hover{
+                opacity:1;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #less:hover{
+                color:#E74C3C;
+                opacity:0.75;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            .login-form{
+                position: absolute;
+                top: 30px;
+                padding: 24px 23px 12px;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            .urlLink{
+                background:#ECF0F1;
+            }
+            #deletePw{
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+                opacity:0;
+                font-size: 22px;
+                
+                position: relative;
+                right: 44px;
+                bottom: 97px;
+            }
+            .icon-random:hover{
+                opacity:1;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #changeColor:hover{
+                opacity:1;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #changeColor{
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+                opacity:0;
+                font-size: 22px;
+
+                position: relative;
+                right: 25px;
+                bottom: 5px;
+            }
+            .icon-random{
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+                opacity:0;
+                float: right;
+                font-size: 22px;
+                margin-right: 0px;
+                margin-top: -20px;
+            }
+            .scroll-pane
+            {
+                width: 100%;
+                height: 200px;
+                overflow: auto;
+            }
+            .horizontal-only
+            {
+                height: auto;
+                max-height: 200px;
+            }
+            [contenteditable="true"].single-line {
+                white-space: nowrap;
+                width:200px;
+                overflow: hidden;
+            }
+            [contenteditable="true"].single-line br {
+                display:none;
+                
+            }
+            [contenteditable="true"].single-line * {
+                display:inline;
+                white-space:nowrap;
+            }
+            h3 {
+                font-size:18px;
+                margin-bottom: 5px;
+            }
+            
+            h1, h2, h3 {
+                line-height: 8px;
+            }
+            .titlePw{
+                outline:none;
+                -webkit-appearance:none;
+                height:18px;
+                padding-top:15px;
+                overflow-x:hidden;
+                white-space: nowrap;
+            }
+            .log{
+                outline:none;
+                -webkit-appearance:none;
+                height:20px;
+                padding-top:8px;
+                padding-bottom:0px;
+                overflow-x:hidden;
+                white-space: nowrap;
+            }
+            .pw{
+                outline:none;
+                -webkit-appearance:none;
+                height:20px;
+                padding-top:5px;
+                overflow-x:hidden;
+                width: 80%;
+                white-space: nowrap;
+            }
+            #textareaPaste{
+                position: absolute;
+                left: 50px;
+                top: 50px;
+            }
+            .rowPw {
+                position: absolute;
+                left: 300px;
+                top: 0px;
+                overflow-y:scroll;
+                overflow-x:hidden;
+                background-color:#FFF;
+                box-shadow: 0 20px 15px #333;                
+            }
+            .spanPw{
+                color:#FFF;
+                overflow-x:hidden;
+                box-sizing: border-box;
+                padding-top:12px;
+                padding-left:28px;
+                padding-right:28px;
+                height: 122px;
+                width:33%;
+                
+                overflow-y:scroll;
+                overflow-x:hidden;
+
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color:#FFF;
+                min-width:800px;
+            }
+            .login1, .changePw, .initPage{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                background-color:#34495e;
+                height: 100%;
+                width: 100%;
+            }
+            .login-screen{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 100px;
+                position: relative;
+                width: 400px;
+            }
+            .inputLogin {
+                position: absolute;
+                margin-top: 50px;
+                width: 220px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .no-space [class*="span"] {
+                margin-left: 0;
+            }
+            .no-space {
+                margin-left:0;
+            }
+            .todoList{
+                overflow-y:scroll;
+                background-color:#16A085;
+
+            }
+            .tooltip.bottom .tooltip-arrow {
+                top: 0;
+                left: 18px;
+            }
+            #moar:hover{
+                opacity:0.75;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            
+            }
+            #crop:hover{
+                opacity:0.75;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #moarPw:hover{
+                opacity:0.75;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #moar{
+                opacity:1;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                font-size: 32px;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #crop{
+                opacity:1;
+                position: absolute;
+                right: 136px;
+                top: 3px;
+                font-size: 27px;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+
+            #moarPw{
+                opacity:1;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                font-size: 32px;
+                color: #fff;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #change:hover{
+                opacity:0.75;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #change{
+                opacity:1;
+                position: absolute;
+                right: 102px;
+                top: 4px;
+                font-size: 31px;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #logout:hover {
+                opacity:0.75;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            .login-icon {
+                left: -125px;
+                position: relative;
+                top: -99px;
+                width: 96px;
+            }            
+            #logout{
+                opacity:1;
+                position: absolute;
+                right: 68px;
+                top: 2px;
+                font-size: 28px;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }            
+            #less{
+                opacity:1;
+                color:#2C3E50;
+                position: absolute;
+                right: 32px;
+                top: 0px;
+                font-size: 32px;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            #save {
+                opacity:1;
+                position: absolute;
+                left: 311px;
+                top: 6px;
+                font-size: 30px;
+            }
+            #ameliorer{
+                position: absolute;
+                left: 300px;
+                top: 50px;
+            }
+            #noteTitle{
+                position: absolute;
+                left: 340px;
+                top: 0px;
+                height:30px;
+            }
+            input[type="text"],input[type="text"]:focus{
+                border:2px solid #fff;
+                border-color: #fff;
+                border-radius:0px;
+                font-size:17px;
+            }
+            textarea,textarea:focus{
+                border-radius:0px;
+                border: 0;
+            }
+            li {
+                list-style-type: none;
+            }
+            a{
+                text-decoration: none;
+            }
+            #ameliorer{
+                background-color:#FFF;
+                
+                -webkit-box-shadow: 0 20px 15px #333;
+                
+                padding-left:15px;
+                padding-right:15px;
+                padding-bottom:40px;
+
+                font-size: 16px;
+                
+                outline:none;
+                -webkit-appearance:none;
+                overflow-y:scroll;
+            }
+            ::-webkit-scrollbar {
+                width: 0px;
+            }
+            #fuiSelector{
+                display: block;
+                top: 40px;
+                left: 308px;
+                font-size:25px;
+                line-height: 50;
+                -moz-transition: 0.25s;
+                -o-transition: 0.25s;
+                transition: 0.25s;
+                -webkit-transition: 0.25s;
+            }
+            .tooltip-inner{
+                line-height: 1.5;
+                width: 200px;
+            }
+            .login-screen {
+                background-color:#34495e;
+            }
+            input[type="text"]:focus, input[type="text"].flat:focus,{
+                border-color: #34495e;
+            }
+            blockquote{
+                margin: 0 0 0 40px;
+                border: none;
+                padding: 0px;
+            }
+        </style>
+    </head>
+    
+    
+    <body>
+    
+
+        
+        <div class="row">
+            <div class="span4 todoList">
+                <div class="todo" style="margin-bottom: 0px;">
+                    <!-- Notes Here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- PW Manager -->
+        <div class="rowPw" style="display:none;">
+            <div id="pwManager" class="row no-space" style="margin-right: -3px; scroll:hidden; overflow-x:hidden"></div>
+        </div>
+            
+        <div id="moarPw" original-title="Create New Password" style="display:none;" class="fui-plus"></div>
+
+        </div>
+        
+        
+            <!-- Text Editor -->
+            <div id="ameliorer"></div>
+        
+        
+            <div id="toolbar" style="background-color=#AEF;">
+            <!-- Title field -->
+            <input type="text" id="noteTitle" value="" placeholder="Title...">
+                
+            <!-- icons top -->
+            <div id="moar" original-title="Create New Note" class="fui-plus"></div>
+            <div id="less" original-title="Delete Note (double click)" class="fui-cross"></div>
+            <div id="save" original-title="Change Icon" class="fui-check"></div>
+            <div id="logout" original-title="Logout" class="fui-lock"></div>
+            <div id="change" original-title="Change Password" class="icon-repeat"></div>
+            <!--<div id="up" original-title="Up Note" class="icon-arrow-up"></div>-->
+            <!--<div id="down" original-title="Down Note" class="icon-arrow-down"></div>-->
+            <div id="crop" original-title="Crop HTML (double click)" class="fui-new"></div>
+
+            </div>
+
+                <!-- Login Window -->
+                <div class="login1">
+                    <div class="login-screen">
+                        
+                        <div class="login-icon">
+                            <img src="images/login/icon.png" alt="Welcome to Mail App">
+                                <h4 style="color: #ECF0F1;">Welcome to <small>Cassius</small></h4>
+                        </div>
+                        
+                        <div class="login-form" style="padding: 24px 23px 22px;">
+                            <div class="control-group">
+                                <input type="password" class="login-field" value="" placeholder="Password" id="login-pass">
+                                    <label class="login-field-icon fui-lock" for="login-pass"></label>
+                            </div>
+                            
+                            <a id="pw" class="btn btn-inverse btn-large btn-block">Login</a>
+                            
+                            <div class="wrong">
+                                <div class="login-link"> </div>
+                                <a class="login-link" href="#" style="margin-bottom: -10px;"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <!-- Change Pw  -->
+                <div class="changePw" style="display: none;">
+                    <div class="login-screen">
+
+                        <div class="login-icon">
+                            <img src="images/login/icon.png" alt="Welcome to Mail App">
+                                <h4 style="color: #ECF0F1;">Welcome to <small>Cassius</small></h4>
+                        </div>
+                        
+                        <div class="login-form" style="padding: 24px 23px 17px;">
+                            <div class="control-group">
+                                <input type="password" class="login-field" value="" placeholder="New Password" id="changePw">
+                                    <label class="login-field-icon fui-lock" for="login-pass"></label>
+                                    </div>
+                            
+                            <a id="changePwButton" class="btn btn-inverse btn-large btn-block">Change Password</a>
+                            <a id="cancelChangePw" class="btn btn-inverse btn-large btn-block">Cancel</a>
+                            
+                        </div>
+                    </div>
+                </div>
+        
+        
+        <!-- First Start -->
+        <div class="initPage" style="display:none; opacity: 0.5;">
+            <div class="login-screen">
+                <a id="gotIt" class="btn btn-inverse btn-large btn-block">Cancel</a>
+
+                </div>
+            </div>
+        </div>
+        
+        
+            <!-- Icon Selector -->
+            <div class="tooltip fade bottom in" id="fuiSelector" style="display: none; ">
+            <div class="tooltip-arrow" style=""></div>
+                <div class="tooltip-inner">
+                        <div class="iconToSelect fui-arrow-right">  </div>
+                        <div class="iconToSelect fui-arrow-left">  </div>
+                        <div class="iconToSelect fui-cmd">  </div>
+                        <div class="iconToSelect fui-check-inverted">  </div>
+                        <div class="iconToSelect fui-heart">  </div>
+                        <div class="iconToSelect fui-location">  </div>
+                        <div class="iconToSelect fui-plus">  </div>
+                        <div class="iconToSelect fui-check">  </div>
+                        <div class="iconToSelect fui-cross">  </div>
+                        <div class="iconToSelect fui-list">  </div>
+                        <div class="iconToSelect fui-new">  </div>
+                        <div class="iconToSelect fui-video">  </div>
+                        <div class="iconToSelect fui-photo">  </div>
+                        <div class="iconToSelect fui-volume">  </div>
+                        <div class="iconToSelect fui-time">  </div>
+                        <div class="iconToSelect fui-eye">  </div>
+                        <div class="iconToSelect fui-chat">  </div>
+                        <div class="iconToSelect fui-search">  </div>
+                        <div class="iconToSelect fui-user">  </div>
+                        <div class="iconToSelect fui-mail">  </div>
+                        <div class="iconToSelect fui-lock">  </div>
+                        <div class="iconToSelect fui-gear">  </div>
+
+                        <div class="iconToSelect fui-calendar-solid">  </div>
+                        <div class="iconToSelect fui-pause">  </div>
+                        <div class="iconToSelect fui-play">  </div>
+                        <div class="iconToSelect icon-music">  </div>
+                        <div class="iconToSelect icon-star">  </div>
+                        <div class="iconToSelect icon-tint">  </div>
+                        <div class="iconToSelect icon-move">  </div>
+                        <div class="iconToSelect icon-asterisk">  </div>
+                        <div class="iconToSelect icon-fire">  </div>
+                        <div class="iconToSelect icon-plane">  </div>
+                        <div class="iconToSelect icon-magnet">  </div>
+                        <div class="iconToSelect icon-shopping-cart">  </div>
+                        <div class="iconToSelect icon-wrench">  </div>
+                        <div class="iconToSelect icon-road">  </div>
+                        <div class="iconToSelect icon-trash">  </div>
+                        <div class="iconToSelect icon-user">  </div>
+                        <div class="iconToSelect icon-refresh">  </div>
+                        <div class="iconToSelect icon-headphones">  </div>
+                        <div class="iconToSelect icon-qrcode">  </div>
+                        <div class="iconToSelect icon-book">  </div>
+                        <div class="iconToSelect icon-leaf">  </div>
+                        <div class="iconToSelect icon-bell">  </div>
+                        <div class="iconToSelect icon-eye-close">  </div>
+                        <div class="iconToSelect icon-eye-open">  </div>
+                        <div class="iconToSelect icon-gift">  </div>
+                        <div class="iconToSelect icon-repeat">  </div>
+                        <div class="iconToSelect icon-glass">  </div>
+                        <div class="iconToSelect icon-tasks">  </div>
+                        <div class="iconToSelect fui-radio-unchecked">  </div>
+                        <div class="iconToSelect fui-radio-checked">  </div>
+                        <div class="iconToSelect fui-checkbox-unchecked">  </div>
+                        <div class="iconToSelect fui-checkbox-checked">  </div>
+                    </div>
+                </div>
+        
+
+                
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/jquery.stacktable.js"></script>
+    <script src="js/application.js"></script>
+    <!--
+         crypto.js Local verion ONLY.
+         Please consider using HTTPS in hostile environement. 
+         Remember, the man in the middle is watching you !
+    -->
+    <script src="js/aes.js"></script>
+    <script src="js/sjcl.js"></script> <!-- SJCL for faster PBKDF2 http://jsperf.com/pbkdf2-sjcl-cryptojs -->
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="js/jquery.tipsy.js"></script>
+    <script src="js/jstorage.js"></script>
+    <script src="js/jquery.livequery.js"></script>
+    <script src="js/cas.js"></script>
+    <script src="js/bootstrap-wysiwyg.js"></script>
+    <script src="js/jquery.hotkeys.js"></script>
+
+
+                
+    </body>
+</html>
