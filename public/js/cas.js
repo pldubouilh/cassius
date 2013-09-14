@@ -150,7 +150,7 @@ function changePw() {
 
 	// Everything's change, change key now
 	key = newKey;
-	console.log(key);
+	//console.log(key);
 
 	loadNotes();
 	loadPw();
@@ -346,7 +346,7 @@ function loadPw() {
         
         if(color==null) color = '9B59B6';
         
-		var stringWithRandID = '<div id="' + pwIds[i] + '" class="spanPw" style="background-color:#' + color + '; overflow:hidden;"> <div class="titlePw" contenteditable="true">' + title + '</div>  <div class="log" contenteditable="true">' + log + '</div>   <div  class="pw" style="" contenteditable="true">' + '##########' + '</div><i id="random" class="icon-random" style=""></i><i id="changeColor" original-title="Change Color" class="icon-repeat" style="" original-title="Random Password (Double Click)"></i><div id="deletePw" original-title="Delete Password (Double Click)" class="fui-cross"></div></div>';
+		var stringWithRandID = '<div id="' + pwIds[i] + '" class="spanPw" style="background-color:#' + color + '; overflow:hidden;"> <h3><div class="titlePw" contenteditable="true">' + title + '</div></h3>  <div class="log" contenteditable="true">' + log + '</div>   <div  class="pw" style="" contenteditable="true">' + '##########' + '</div><i id="random" class="icon-random" style=""></i><i id="changeColor" original-title="Change Color" class="icon-repeat" style="" original-title="Random Password (Double Click)"></i><div id="deletePw" original-title="Delete Password (Double Click)" class="fui-cross"></div></div>';
 
 		$("#pwManager").append(stringWithRandID);
 
@@ -398,14 +398,20 @@ function firststart() {
 	// pwIds
 	var nb = pwIds.length;
 	var randomizedId = makeid();
-	setEncrypted(randomizedId, "<h3>aBay</h3>");
+	setEncrypted(randomizedId, "aBay");
 	setEncrypted(randomizedId + "log", "awesomeSeller");
     setEncrypted(randomizedId + "color", '9B59B6');
-
 	var pw = randPw();
-
 	setEncrypted(randomizedId + "pw", pw);
 
+    var nb = pwIds.length;
+	var randomizedId = makeid();
+	setEncrypted(randomizedId, "Top Left to Delete");
+	setEncrypted(randomizedId + "log", "Btm left to change Color");
+    setEncrypted(randomizedId + "color", 'rgb(241, 196, 15)');
+	var pw = randPw();
+	setEncrypted(randomizedId + "pw", pw);
+    
 	pwIds[nb] = randomizedId;
 	console.log(pwIds);
 	setEncrypted("pwIds", pwIds);
@@ -512,7 +518,7 @@ $(document).on("paste", ".titlePw", function () {
 
 		// Get HTML and add style
 		var title = $(this).html();
-		$(this).html('<h3>' + title + '</h3>');
+		$(this).html( title);
 
 		setCursorToEnd($(this).get(0));
 		setEncrypted(id, title);
@@ -580,8 +586,9 @@ $(document).on("dblclick", "#crop", function () {
 
 // Save PW Info as soon as possible
 $(document).on("keyup", ".titlePw", function () {
-	var id = $(this).parent("div").attr("id");
+    var id = $(this).parent().parent("div").attr("id");
 	var title = $(this).html();
+
 	setEncrypted(id, title);
 });
 
@@ -707,10 +714,10 @@ $(document).on("click", "#moarPw", function () {
 	
     // Id
 	var randomizedId = makeid();
-	var stringWithRandID = '<div id="' + randomizedId + '" class="spanPw" style="background-color:#' + color + '; overflow:hidden;"> <div class="titlePw" contenteditable="true"><h3>Website</h3></div>  <div class="log" contenteditable="true">Admin</div>   <div class="pw" contenteditable="true">##########</div><i id="random" original-title="Random Password (Double Click)" class="icon-random" style="opacity:1;"></i><i id="changeColor" original-title="Change Color" class="icon-repeat" style="opacity:1;"></i><div original-title="Delete Password (Double Click)" id="deletePw" style="opacity:1;" class="fui-cross"></div></div>';
+	var stringWithRandID = '<div id="' + randomizedId + '" class="spanPw" style="background-color:#' + color + '; overflow:hidden;"> <h3><div class="titlePw" contenteditable="true">Website</div></h3>  <div class="log" contenteditable="true">Admin</div>   <div class="pw" contenteditable="true">##########</div><i id="random" original-title="Random Password (Double Click)" class="icon-random" style="opacity:1;"></i><i id="changeColor" original-title="Change Color" class="icon-repeat" style="opacity:1;"></i><div original-title="Delete Password (Double Click)" id="deletePw" style="opacity:1;" class="fui-cross"></div></div>';
 
 	$("#pwManager").append(stringWithRandID);
-	setEncrypted(randomizedId, "<h3>Website</h3>");
+	setEncrypted(randomizedId, "Website");
 	setEncrypted(randomizedId + "log", "Admin");
     setEncrypted(randomizedId + "color", color);
     setEncrypted(randomizedId + "pw", randPw());
@@ -842,7 +849,7 @@ $(document).on("mouseleave", ".pw", function () {
 	var id = $(this).parent("div").attr("id");
 
 	if (pwClicked) return;
-	console.log(id + ' mouseleft');
+	//console.log(id + ' mouseleft');
 
 	$(this).delay(300).queue(function (n) {
         if (id != pwClickedId) {
