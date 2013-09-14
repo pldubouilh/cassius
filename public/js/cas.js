@@ -396,24 +396,23 @@ function firststart() {
 	setEncrypted(notesIds[nb] + "time", "Safe Password Manager");
 
 	// pwIds
-	var nb = pwIds.length;
+	nb = pwIds.length;
 	var randomizedId = makeid();
 	setEncrypted(randomizedId, "aBay");
 	setEncrypted(randomizedId + "log", "awesomeSeller");
     setEncrypted(randomizedId + "color", '9B59B6');
 	var pw = randPw();
 	setEncrypted(randomizedId + "pw", pw);
+	pwIds[nb] = randomizedId;
 
-    var nb = pwIds.length;
-	var randomizedId = makeid();
+    nb++;
+	randomizedId = makeid();
 	setEncrypted(randomizedId, "Top Left to Delete");
 	setEncrypted(randomizedId + "log", "Btm left to change Color");
-    setEncrypted(randomizedId + "color", 'rgb(241, 196, 15)');
-	var pw = randPw();
-	setEncrypted(randomizedId + "pw", pw);
-    
+    setEncrypted(randomizedId + "color", 'E74C3C');
+	setEncrypted(randomizedId + "pw", "Random Password >");
 	pwIds[nb] = randomizedId;
-	console.log(pwIds);
+    
 	setEncrypted("pwIds", pwIds);
 
 	nb = 1;
@@ -445,7 +444,7 @@ function firststart() {
 	setEncrypted(noteIcon, 'fui-heart');
 
 	// Save Welcome text
-	var text = '<div>Welcome to Cassius !</div><div><br></div><div>This application aims to be a vault inside your mac, keeping your passwords and your notes safe.&nbsp;</div><div><br></div><div>All notes and passwords are&nbsp;<i>encrypted and saved on-the-fly</i>&nbsp;using the industry standard algorithm AES. &nbsp;You and only you can access you data (in a reasonable time-span).&nbsp;</div><div><br></div><div>Feel free to change the sync folder under File &gt; Change sync folder. Select here your favourite flavour of cloud ; Bropbox, iLoud, Owncloud, SSHfs, Thumbdrive…&nbsp;A few shortcuts :&nbsp;</div><div><blockquote><br></blockquote><div><b>⌘+ B is for Bold</b><br></div><div><i>⌘+ I is for Italic<br></i></div><div><u>⌘+ U is for Underline</u></div><blockquote>Tab is for indent</blockquote>Shift + tab is for de-indent. This one may be tricky, but it\'s awesome for checklists !<br><blockquote><br></blockquote></div><div>Notes and passwords are &nbsp;drag\'n\'droppable, and there is a crop HTML button that you may find usefull if you paste content from the web. The others icons are here for changing your password, logout, delete a note and add a note. You can change a note icon by clicking on it.</div><div><br></div><div>This is an open-source application, and you\'re more than welcome to come and review the code ! It has been released under the term of the GNU GPL v3.</div><div><br></div><div><p>You can also follow me on&nbsp;<a href="https://twitter.com/pldwan">Twitter</a>, for news and updates !</p><p>Have fun using Cassius !</p><p>@pldwan</p></div>';
+	var text = '<div>Welcome to Cassius !</div><div><br></div><div>This application aims to be a vault inside your mac, keeping your passwords and your notes safe.&nbsp;</div><div><br></div><div>All notes and passwords are&nbsp;<i>encrypted and saved <b>as you type</b>&nbsp;</i>using the industry standard algorithm AES. That means, no save button, and you and only you can access you data.&nbsp;</div><div><br></div><div>Feel free to change the sync folder under File &gt; Change sync folder. Select here your favourite flavour of cloud ; Bropbox, iLoud, Owncloud, SSHfs, Thumbdrive…&nbsp;A few shortcuts :&nbsp;</div><div><br></div><div><div><b>⌘+ B is for Bold</b><br></div><div><i>⌘+ I is for Italic<br></i></div><div><u>⌘+ U is for Underline</u></div><blockquote>Tab is for indent</blockquote>Shift + tab is for de-indent. This one may be tricky, but it\'s awesome for checklists !</div><div><br></div><div>Notes and passwords are &nbsp;drag\'n\'droppable, and there is a crop HTML button that you may find usefull if you paste content from the web. The others icons are here for changing your password, logout, delete a note and add a note. You can change a note icon by clicking on it.</div><div><br></div><div>This is an open-source application, and you\'re more than welcome to come and review the code ! It has been released under the term of the GNU GPL v3.</div><div><br></div><div>You can also follow me on&nbsp;<a href="https://twitter.com/pldwan">Twitter</a>, for news and updates !</div><div><br></div><div>Have fun using Cassius !</div><div>@pldwan</div>';
     
     
 	var title = "Welcome !"
