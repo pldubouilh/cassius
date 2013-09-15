@@ -8,7 +8,7 @@ This project is quite simple ; it consists on a website that is opened in an osx
 This website is in the /public folder. It can easily be ported to any OS/Browser. It's supposed to work out of the box on a Webkit browser. Firefox support is on the way, but there still are some raw edges.
 ### TODO
 #####1.1 
-* [Add icon to DB](stackoverflow.com/questions/5739330/using-cocoa-to-create-an-icon-for-a-folder)
+* [Add icon to DB](http://stackoverflow.com/questions/5739330/using-cocoa-to-create-an-icon-for-a-folder)
 * Properly split MacOS version branch & Browser based branch 
 
 #####2.0
