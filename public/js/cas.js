@@ -15,8 +15,8 @@ $('#noteTitle').css('width', $window.width() - 550);
 $('.todoList').css('height', $window.height() + 0);
 
 var offset = 300;
-var ffoffset4 = 525;
-var ffoffset3 = 470;
+var ffoffset4 = 514;
+var ffoffset3 = 455;
 
 $('.rowPw').css('width', $window.width() - offset);
 $('.rowPw').css('height', $window.height() - 0);
@@ -30,6 +30,7 @@ if ($.browser.mozilla) {
 	$('#noteTitle').css({"padding-left": "60px","left": "285px"});
 	$('#ameliorer').css({"left": "285px"});
 	$('.rowPw').css({"left": "285px"});
+	$('.rowPw').css('width', ($window.width() - 275));
 	$('.titlePw').css({"overflow-y": "hidden"});
 	$('#moarPw').css({"right": "18px"});
 }
@@ -61,6 +62,7 @@ $(window).resize(function () {
 		else $('.spanPw').css('width', (($window.width() - ffoffset3) / 3));
 		$('#ameliorer').css('width', $window.width() - 292);
 		$('#ameliorer').css('width', $window.width() - 292);
+		$('.rowPw').css('width', ($window.width() - 275));
 	}
 
 
