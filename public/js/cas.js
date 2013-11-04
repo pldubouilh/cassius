@@ -600,6 +600,77 @@ $(document).on("keyup", ".log", function () {
 });
 
 
+// Search routine
+$(document).on("keyup", ".todo-search-field", function () {
+               var typed = $(this).val();
+               
+               // No search in pw
+               //if (actualNote=="password") return;
+               
+               // Remove sortable when search activated
+               if(typed.length>0) $('.todo').sortable("disable");
+               else{
+                    $('.todo').sortable("enable");
+                    $('.todo').html('');
+                    loadNotes();
+                    return;
+               }
+               
+               var results=[];
+               
+               // Check all items
+               for (var i = 0, c = notesIds.length; i < c; i++) {
+               
+                    var noteTitle = getEncrypted(notesIds[i] + 'title');
+                    if (!noteTitle || noteTitle.length === 0 || noteTitle == ' ') noteTitle = 'New Note';
+                    var note=getEncrypted(notesIds[i]);
+               
+                    if((noteTitle.indexOf(typed)!=-1) || (note.indexOf(typed)!=-1)) results.push(notesIds[i]);
+               }
+               
+               console.log(results);
+               
+               $('.todo').html('');
+               
+               // Check all items
+               for (var i = 0, c = results.length; i < c; i++) {
+               
+                    // Get note Icon
+                    var icon = getEncrypted(results[i] + 'icon');
+                    var noteTitle = getEncrypted(results[i] + 'title');
+                    var noteTime = getEncrypted(results[i] + 'time');
+               
+                    // Checked
+                    if (i==0){
+                        var selected = 'class="todo-done"';
+                        actualNote=results[i];
+                        setEncrypted('actualNote', actualNote);
+                    }
+                    else var selected = '';
+               
+                    if (!noteTitle || noteTitle.length === 0 || noteTitle == ' ') noteTitle = 'New Note';
+               
+                    var stringWithRandID = '<li  id=' + results[i] + ' ' + selected + '><div class="todo-icon ' + icon + '"> </div> <div class="todo-content"> <h4 class="todo-name">' + noteTitle + '</h4><div class="under">'+ noteTime +'</div></div> </li>';
+               
+                    $(".todo").append(stringWithRandID);
+               
+               }
+               
+               // Load First element value & title
+               var value = getEncrypted(actualNote);
+               var valuetitle = getEncrypted(actualNote + 'title');
+               var valueIcon = getEncrypted(actualNote + 'icon');
+               
+               $("#ameliorer").html(value);
+               $("#noteTitle").val(valuetitle);
+               
+               // Load Icon
+               $('#save').removeClass();
+               $('#save').toggleClass(valueIcon);
+               
+               });
+
+
 // Tipsy
 $('#moar').tipsy({gravity: 'ne',fade: true,delayIn: 700,opacity: 0.9});
 $('#less').tipsy({gravity: 'ne',fade: true,delayIn: 700,opacity: 0.9});
@@ -1154,11 +1225,14 @@ $('li').livequery('click', function () {
 		$('#ameliorer').hide();
 		$('.rowPw').show();
 		$('#moarPw').show();
+        $('.todo-search-field').attr('disabled', true);
 	} else {
 		$('#ameliorer').show();
 		$('#toolbar').show();
 		$('.rowPw').hide();
 		$('#moarPw').hide();
+        $('.todo-search-field').attr('disabled', false);
+
 	}
 
 });
